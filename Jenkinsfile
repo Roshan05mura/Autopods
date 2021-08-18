@@ -1,6 +1,11 @@
 pipeline {
 
-  agent { label 'kubepod' }
+ agent{label 'kubepod'
+        kubernetes {
+      	cloud 'kubernetes'
+      	defaultContainer 'jnlp'
+      }
+}
 
   stages {
 
